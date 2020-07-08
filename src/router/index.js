@@ -1,62 +1,63 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/",
-    name: "Home",
-    component: Home
+    path: "/login",
+    name: "Login",
+    meta: { layout: "empty" },
+    component: () => import('../views/Login')
   },
   {
-    path: "/login",
-    name: "login",
-    component: () => import('../views/Login'),
+    path: "/register",
+    name: "Register",
+    component: () => import('../views/Register'),
     meta: { layout: "empty" }
   },
   {
-    path: "/categories",
-    name: "categories",
+    path: "/",
+    name: "Home",
     meta: { layout: "main" },
-    component: () => import("../views/Categories.vue")
-  },
-  {
-    path: "/detail-record",
-    name: "detail-record",
-    meta: { layout: "main" },
-    component: () => import("../views/DetailRecord")
+    component: () => import('../views/Home.vue')
   },
   {
     path: "/history",
-    name: "history",
+    name: "History",
     meta: { layout: "main" },
     component: () => import("../views/History")
   },
   {
     path: "/planning",
-    name: "planning",
+    name: "Planning",
     meta: { layout: "main" },
     component: () => import("../views/Planning")
   },
   {
-    path: "/profile",
-    name: "profile",
-    meta: { layout: "main" },
-    component: () => import("../views/Profile")
-  },
-  {
     path: "/record",
-    name: "record",
+    name: "Record",
     meta: { layout: "main" },
     component: () => import("../views/Record")
   },
   {
-    path: "/register",
-    name: "register",
-    component: () => import('../views/Register'),
-    meta: { layout: "empty" }
+    path: "/categories",
+    name: "Categories",
+    meta: { layout: "main" },
+    component: () => import("../views/Categories.vue")
+  },
+  {
+    path: "/detail",
+    name: "Detail",
+    meta: { layout: "main" },
+    component: () => import("../views/Detail")
+  },
+
+  {
+    path: "/profile",
+    name: "Profile",
+    meta: { layout: "main" },
+    component: () => import("../views/Profile")
   }
 ];
 
