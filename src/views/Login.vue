@@ -88,11 +88,8 @@
 
 				try {
 					await this.$store.dispatch('login', formData);
-
 					this.$router.push('/');
-				} catch (error) {
-					throw error;
-				}
+				} catch (error) {}
 			}
 		}
 	};
